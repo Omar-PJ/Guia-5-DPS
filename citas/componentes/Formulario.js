@@ -176,7 +176,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
         paddingVertical: 10,
-        flex: 1
+        flex: 1,
+        borderRadius: 10, 
     },
     label: {
         fontWeight: 'bold',

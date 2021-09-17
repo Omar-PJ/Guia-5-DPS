@@ -48,7 +48,8 @@ const Cita = ({item, eliminarPaciente}) => {
         borderStyle: 'solid',
         borderBottomWidth: 1,
         paddingVertical: 20,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        borderRadius: 10, 
     },
     label: {
         fontWeight: 'bold',
