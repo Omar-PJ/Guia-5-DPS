@@ -26,7 +26,7 @@ const App = () => {
     }, []);
 
     // Elimina los pacientes del state
-    const eliminarPaciente = id => {
+    const eliminarCliente = id => {
   
       const citasFiltradas = citas.filter( cita => cita.id !== id );
       setCitas( citasFiltradas );
@@ -54,7 +54,7 @@ const App = () => {
     return (
       <TouchableWithoutFeedback onPress={() => cerrarTeclado() }>
       <View style={styles.contenedor}>
-        <Text style={styles.titulo}>Administrador de Citas</Text>
+        <Text style={styles.titulo}>    Bar y Restaurante                                     La Mafia se sienta a la Mesa </Text>
         <View>
           <TouchableHighlight onPress={ () => mostrarFormulario() }
           style={styles.btnMostrarForm}>
@@ -64,7 +64,7 @@ const App = () => {
         <View style={styles.contenido}>
           { mostrarform ? (
             <>
-              <Text style={styles.titulo}>Crear Nueva Cita</Text>
+              <Text style={styles.titulo}>Bienvenido(a) Agrega tu cita</Text>
               <Formulario
                 citas={citas}
                 setCitas={setCitas}
@@ -79,7 +79,7 @@ const App = () => {
             style={styles.listado}
             data={citas}
             renderItem={ ({item}) => <Cita item={item}
-            eliminarPaciente={eliminarPaciente} /> }
+            eliminarPaciente={eliminarCliente} /> }
             keyExtractor={ cita => cita.id}
           />
       </>
@@ -92,7 +92,8 @@ const App = () => {
     const styles = StyleSheet.create({
       contenedor: {
         backgroundColor: Colors.PRIMARY_COLOR,
-        flex: 1
+        flex: 1,
+        borderRadius: 2, 
       },
       titulo: {
         color: '#FFF',
@@ -115,7 +116,14 @@ const App = () => {
         marginVertical: 10
       },
       textoMostrarForm: {
+        textShadowColor: 'black',
+        textShadowRadius: 5,
+        textShadowOffset: {
+          width: 2,
+          height: 2
+        },
         color: '#FFF',
+        fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center'
       }
